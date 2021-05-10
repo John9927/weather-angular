@@ -1,0 +1,16 @@
+<div class="container__spinner" *ngIf="service.spinner">
+  <app-spinner></app-spinner>
+</div>
+
+
+<div *ngIf="service.insertCity" style="display: flex; flex-direction: column; color: white;">
+  <div>
+    Città:<span style="color: red;"> {{service.valueCity}}</span>
+  </div>
+
+  <span>Temperatura: {{temperature}}°</span>
+  <span>coord: {{coord | json}}</span>
+  <img style="height: 100px; width: 100px;" src="{{weatherIcon}}">
+  <span>{{weatherDesc}}</span>
+  <!-- <span>{{timezone}}</span> -->
+</div>

@@ -1,0 +1,13 @@
+<div *ngIf="service.insertCity" class="container__input">
+  <div class="form__group field">
+    <input autocomplete="off" type="input" [formControl]="searchCity" class="form__field" placeholder="Insert City" name="name" id='name'
+      required />
+    <label for="name" class="form__label">Insert City</label>
+    <button style="cursor: pointer;" (click)="onClickSearch(searchCity.value)">Search</button>
+  </div>
+</div>
+
+
+
+
+
