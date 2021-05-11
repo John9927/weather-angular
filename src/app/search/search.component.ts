@@ -28,4 +28,9 @@ export class SearchComponent implements OnInit {
     this.router.navigateByUrl('/dashboard');
   }
 
+  search(value: string) {
+    this.service.getValueForm(value);
+    this.service.auth = true;
+    this.router.navigateByUrl('/dashboard');
+  }
 }

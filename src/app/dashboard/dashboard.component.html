@@ -3,14 +3,24 @@
 </div>
 
 
-<div *ngIf="service.insertCity" style="display: flex; flex-direction: column; color: white;">
-  <div>
-    Città:<span style="color: red;"> {{service.valueCity}}</span>
+<div *ngIf="service.insertCity" class="container__card">
+
+  <!-- <span>{{weatherDesc}}</span>
+  <span>Vento: {{wind}}km/h</span>
+  Sunrise: {{sunrise}} -->
+
+  <div class="card">
+    <div class="container__items">
+      <div style="display: flex; width: 100%;margin-left: -26px; justify-content: center;">
+        <span class="span__city">{{service.valueCity}}</span>
+      </div>
+      <img class="weather__icon" src="{{weatherIcon}}">
+    </div>
+    <div class="container__temperature">
+      <span class="temperature">{{temperature}}°</span>
+    </div>
   </div>
 
-  <span>Temperatura: {{temperature}}°</span>
-  <span>coord: {{coord | json}}</span>
-  <img style="height: 100px; width: 100px;" src="{{weatherIcon}}">
-  <span>{{weatherDesc}}</span>
-  <!-- <span>{{timezone}}</span> -->
+  <!-- Google Maps -->
+  <app-google-maps></app-google-maps>
 </div>

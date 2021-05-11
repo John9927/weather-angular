@@ -12,7 +12,9 @@ export class GetDataService {
   lang = "it";
   spinner = false;
   insertCity = true;
-
+  auth = false;
+  coordLon: any;
+  coordLat: any;
   constructor(private http: HttpClient) { }
 
   getValueForm(valuesCity: string) {

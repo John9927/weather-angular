@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, OnInit, ElementRef } from '@angular/core';
+import {} from "googlemaps";
 
 @Component({
   selector: 'app-root',

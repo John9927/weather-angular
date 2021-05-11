@@ -8,13 +8,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { GoogleMapsComponent } from './google-maps/google-maps.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     DashboardComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    GoogleMapsComponent
   ],
   imports: [
     BrowserModule,

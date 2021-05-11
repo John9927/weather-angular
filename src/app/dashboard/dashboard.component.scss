@@ -6,3 +6,55 @@
   height: 100vh;
   width: 100%;
 }
+
+// Card
+.container__card {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  width: 300px;
+  flex-direction: column;
+  background-color: rgb(82, 82, 82);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  height: 300px;
+}
+
+.container__items {
+  display: flex;
+  justify-content: space-between;
+  width: 98%;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.span__city {
+  margin: -39px 0px 0px 26px;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.weather__icon {
+  height: 100px;
+  width: 100px;
+}
+
+.container__temperature {
+  display: flex;
+  flex-direction: column;
+}
+
+.temperature {
+  font-size: 24px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  margin-top: -40px;
+}

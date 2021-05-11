@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { GetDataService } from '../services/get-data.service';
-
+import { } from "googlemaps";
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -9,12 +9,14 @@ import { GetDataService } from '../services/get-data.service';
 export class DashboardComponent implements OnInit {
 
   response: any;
-  coord: any;
+  coordLon: number;
+  coordLat: number;
   weatherIcon: any;
   weatherDesc: any;
   temperature: any;
-  time: number;
-
+  wind: any;
+  sunrise: any;
+  sunset: any;
   constructor(public service: GetDataService) { }
 
   ngOnInit(): void {
@@ -22,13 +24,17 @@ export class DashboardComponent implements OnInit {
     this.service.insertCity = false;
     this.service.getCity().subscribe(res => {
       this.response = res;
-      console.log("Response:", this.response);
-      this.coord = this.response.coord;
+      this.service.auth = true;
+      this.service.coordLon = this.response.coord.lon;
+      this.service.coordLat = this.response.coord.lat;
       let urlWeather = "http://openweathermap.org/img/wn/"
       this.weatherIcon = urlWeather + this.response.weather[0].icon + ".png";
       this.temperature = this.response.main.temp;
       this.weatherDesc = this.response.weather[0].description;
-      // this.time = this.response.timezone;
+      this.wind = this.response.wind.speed;
+      this.sunrise = this.response.sys.sunrise;
+      this.sunset = this.response.sys.sunset;
+
       setTimeout(() => {
         this.service.insertCity = true;
         this.service.spinner = false;
@@ -37,11 +43,7 @@ export class DashboardComponent implements OnInit {
   }
 
   onClickSearch(value: string) {
-
     this.service.getValueForm(value);
-
-
-
   }
 
 }

@@ -1,12 +1,15 @@
 <div *ngIf="service.insertCity" class="container__input">
   <div class="form__group field">
-    <input autocomplete="off" type="input" [formControl]="searchCity" class="form__field" placeholder="Insert City" name="name" id='name'
+    <input autocomplete="off" type="input" (keyup.enter)="search($event.target.value)" [formControl]="searchCity" class="form__field" placeholder="Insert City" name="name" id='name'
       required />
     <label for="name" class="form__label">Insert City</label>
-    <button style="cursor: pointer;" (click)="onClickSearch(searchCity.value)">Search</button>
+    <div class="container__search">
+      <span style="cursor: pointer;" (click)="onClickSearch(searchCity.value)">
+        <i class="fas fa-search"></i>
+      </span>
+    </div>
   </div>
 </div>
-
 
 
 

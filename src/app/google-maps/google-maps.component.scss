@@ -1,0 +1,14 @@
+.container__gmap {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.gmap {
+  width: 300px;
+  height: 200px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  display: flex;
+  justify-content: center;
+}
