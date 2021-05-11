@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { GetDataService } from '../services/get-data.service';
 import { } from "googlemaps";
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -17,7 +18,7 @@ export class DashboardComponent implements OnInit {
   wind: any;
   sunrise: any;
   sunset: any;
-  constructor(public service: GetDataService) { }
+  constructor(public service: GetDataService, private router: Router) { }
 
   ngOnInit(): void {
     this.service.spinner = true;
@@ -44,6 +45,10 @@ export class DashboardComponent implements OnInit {
 
   onClickSearch(value: string) {
     this.service.getValueForm(value);
+  }
+
+  onClickArrow() {
+    this.router.navigateByUrl('')
   }
 
 }
