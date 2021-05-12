@@ -90,14 +90,12 @@
   flex-direction: column;
   margin-top: -40px;
   font-size: 12px;
-  // height: 16px;
 }
 
 .fa-sort-up {
   color: red;
   margin-right: 6px;
   margin-top: 3px;
-  // margin-bottom: 5px;
 }
 
 .fa-sort-down {
@@ -108,10 +106,12 @@
 
 @media screen and (max-width: 600px) {
   .arrow-left {
-    display: none;
+    height: 40px;
+    width: 100%;
+    background-color: rgb(53, 54, 54);
   }
 
   .container__card {
-    height: 68vh;
+    height: 100vh;
   }
 }

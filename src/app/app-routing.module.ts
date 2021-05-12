@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: '', component: SearchComponent },
+  { path: 'login', component: SearchComponent },
   { path: 'dashboard',  canActivate: [GuardGuard], component: DashboardComponent },
 ];
 

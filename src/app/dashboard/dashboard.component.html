@@ -1,11 +1,18 @@
+<!-- Spinner -->
 <div class="container__spinner" *ngIf="service.spinner">
   <app-spinner></app-spinner>
 </div>
+<!-- SnackBar Error -->
+<div style="display: flex; justify-content: center; margin-top: 20px;" *ngIf="cityError">
+  <span style="color: white; background-color: rgb(221, 69, 69); border-radius: 4px; padding: 5px; cursor: pointer;" (click)="onClickError()">Hai inserito una città che non esiste. Riprova</span>
+</div>
+<!-- Arrow-left Desktop -->
 <div *ngIf="service.insertCity" class="arrow-left" (click)="onClickArrow()">
   <span style="display: flex; justify-content: center; width: 100%;">
     <i style="color: white; display: flex; justify-content: center;" class="fas fa-long-arrow-alt-left"></i>
   </span>
 </div>
+<!-- Card -->
 <div *ngIf="service.insertCity" class="container__card">
   <div class="card">
     <div class="container__items">

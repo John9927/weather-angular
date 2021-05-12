@@ -22,6 +22,8 @@ export class DashboardComponent implements OnInit {
   sunset: any;
   tempMax: any;
   tempMin: any;
+  cityError = false;
+  arrowLeftMobile = false;
   constructor(public service: GetDataService, private router: Router) { }
 
   ngOnInit(): void {
@@ -47,7 +49,17 @@ export class DashboardComponent implements OnInit {
         this.service.insertCity = true;
         this.service.spinner = false;
       }, 500)
+    }, err => {
+      this.cityError = true;
+      this.service.spinner = false;
+      setTimeout(() => {
+        window.location.reload();
+      }, 5000)
     });
+  }
+
+  onClickError() {
+    window.location.reload();
   }
 
   onClickSearch(value: string) {
