@@ -1,19 +1,12 @@
 <div class="container__spinner" *ngIf="service.spinner">
   <app-spinner></app-spinner>
 </div>
-
 <div *ngIf="service.insertCity" class="arrow-left" (click)="onClickArrow()">
   <span style="display: flex; justify-content: center; width: 100%;">
-    <i style="color: white; display: flex; justify-content: center;"  class="fas fa-long-arrow-alt-left"></i>
+    <i style="color: white; display: flex; justify-content: center;" class="fas fa-long-arrow-alt-left"></i>
   </span>
 </div>
-
 <div *ngIf="service.insertCity" class="container__card">
-
-  <!-- <span>{{weatherDesc}}</span>
-  <span>Vento: {{wind}}km/h</span>
-  Sunrise: {{sunrise}} -->
-
   <div class="card">
     <div class="container__items">
       <div style="display: flex; width: 100%;margin-left: -26px; justify-content: center;">
@@ -23,40 +16,40 @@
     </div>
     <div class="container__temperature">
       <span class="temperature">{{temperature}}°</span>
+      <div class="container__minMax">
+        <span style="display: flex;">
+          <i class="fas fa-sort-up"></i>
+          {{tempMax}}
+        </span>
+        <span style="display: flex;">
+          <i class="fas fa-sort-down"></i>
+          {{tempMin}}
+        </span>
+      </div>
     </div>
-
     <div style="display: flex; justify-content: space-between; width: 95%; margin: 0 auto; margin-top: 20px;">
       <div style="display: flex; flex-direction: column; font-size: 12px; width: 100%; justify-content: center;">
         <span style="display: flex;">
           <img src="./../../assets/sunset.png" class="image">
           <span style="display: flex; align-items: center;">
-            {{sunset}}
+            {{sunrise | date:'HH:MM'}}
           </span>
         </span>
         <span style="display: flex;">
           <img src="./../../assets/sunrise.png" class="image">
           <span style="display: flex; align-items: center;">
-            {{sunrise}}
+            {{sunset | date:'HH:MM' }}
           </span>
         </span>
       </div>
-      <div style="display: flex;
-      justify-content: center;
-      width: 100%;
-      height: 50px;
-      align-items: center;">
-        <span>Pioggia moderata</span>
+      <div style="display: flex; justify-content: center; width: 100%; height: 50px; align-items: center;">
+        <span>{{weatherDesc}}</span>
       </div>
     </div>
-
-    <div style="display: flex; justify-content: center; width: 100%; margin-top: 15px;">
+    <div style="display: flex; justify-content: center; width: 100%; margin: 15px 0px 15px 0px;">
       <i class="fas fa-wind"></i> &nbsp; {{wind}}km/h
     </div>
   </div>
-
   <!-- Google Maps -->
   <app-google-maps></app-google-maps>
 </div>
-
-
-

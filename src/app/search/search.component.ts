@@ -21,10 +21,12 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void { }
 
+
   searchCity = new FormControl('');
 
   onClickSearch(value: string) {
     this.service.getValueForm(value);
+    this.service.auth = true;
     this.router.navigateByUrl('/dashboard');
   }
 

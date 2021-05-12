@@ -52,12 +52,12 @@
 
 .container__temperature {
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
 }
 
 .temperature {
   font-size: 24px;
-  width: 200px;
+  width: 150px;
   display: flex;
   justify-content: center;
   margin-top: -40px;
@@ -81,4 +81,37 @@
 .image {
   height: 28px;
   width: 31px;
+}
+
+
+// container MinMax
+.container__minMax {
+  display: flex;
+  flex-direction: column;
+  margin-top: -40px;
+  font-size: 12px;
+  // height: 16px;
+}
+
+.fa-sort-up {
+  color: red;
+  margin-right: 6px;
+  margin-top: 3px;
+  // margin-bottom: 5px;
+}
+
+.fa-sort-down {
+  color: blue;
+  margin-right: 5px;
+  margin-top: -3px;
+}
+
+@media screen and (max-width: 600px) {
+  .arrow-left {
+    display: none;
+  }
+
+  .container__card {
+    height: 68vh;
+  }
 }

@@ -14,12 +14,11 @@ $gray: #9b9b9b;
 }
 
 .container__search {
-  position: absolute;
-  width: 107%;
   display: flex;
   justify-content: flex-end;
   margin-top: -30px;
-  z-index: -1;
+  z-index: 1;
+  margin-right: -53px;
 }
 
 .form__group {
@@ -82,3 +81,12 @@ $gray: #9b9b9b;
   &:required,&:invalid { box-shadow:none; }
 }
 
+@media screen and (max-width: 600px) {
+  .container__input {
+    height: 89vh;
+    justify-content: center;
+  }
+  .container__search {
+    width: 120%;
+  }
+}

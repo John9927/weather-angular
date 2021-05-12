@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { GetDataService } from '../services/get-data.service';
 import { } from "googlemaps";
 import { Router } from '@angular/router';
+import fromUnixTime from 'date-fns/fromUnixTime';
+import { intlFormat } from 'date-fns';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -18,6 +20,8 @@ export class DashboardComponent implements OnInit {
   wind: any;
   sunrise: any;
   sunset: any;
+  tempMax: any;
+  tempMin: any;
   constructor(public service: GetDataService, private router: Router) { }
 
   ngOnInit(): void {
@@ -25,6 +29,7 @@ export class DashboardComponent implements OnInit {
     this.service.insertCity = false;
     this.service.getCity().subscribe(res => {
       this.response = res;
+      console.log(this.response);
       this.service.auth = true;
       this.service.coordLon = this.response.coord.lon;
       this.service.coordLat = this.response.coord.lat;
@@ -33,8 +38,10 @@ export class DashboardComponent implements OnInit {
       this.temperature = this.response.main.temp;
       this.weatherDesc = this.response.weather[0].description;
       this.wind = this.response.wind.speed;
-      this.sunrise = this.response.sys.sunrise;
-      this.sunset = this.response.sys.sunset;
+      this.tempMax = this.response.main.temp_max;
+      this.tempMin = this.response.main.temp_min;
+      this.sunset = fromUnixTime(this.response.sys.sunset);
+      this.sunrise = fromUnixTime(this.response.sys.sunrise);
 
       setTimeout(() => {
         this.service.insertCity = true;
