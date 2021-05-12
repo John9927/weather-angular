@@ -76,6 +76,10 @@ $gray: #9b9b9b;
   border-image: linear-gradient(to right, $primary,$secondary);
   border-image-slice: 1;
 }
+
+input:focus {
+  outline: none;
+}
 /* reset input */
 .form__field{
   &:required,&:invalid { box-shadow:none; }
